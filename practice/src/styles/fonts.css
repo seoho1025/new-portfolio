@@ -1,0 +1,56 @@
+/**
+ * 폰트: NanumSquare Neo
+ */
+
+@font-face {
+  font-family: 'NanumSquare Neo';
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://fastly.jsdelivr.net/gh/moonspam/NanumSquareNeo@1.0.0/NanumSquareNeoTTF-aLt.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'NanumSquare Neo';
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://fastly.jsdelivr.net/gh/moonspam/NanumSquareNeo@1.0.0/NanumSquareNeoTTF-bRg.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'NanumSquare Neo';
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://fastly.jsdelivr.net/gh/moonspam/NanumSquareNeo@1.0.0/NanumSquareNeoTTF-bRg.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'NanumSquare Neo';
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://fastly.jsdelivr.net/gh/moonspam/NanumSquareNeo@1.0.0/NanumSquareNeoTTF-bRg.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'NanumSquare Neo';
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://fastly.jsdelivr.net/gh/moonspam/NanumSquareNeo@1.0.0/NanumSquareNeoTTF-cBd.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'NanumSquare Neo';
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://fastly.jsdelivr.net/gh/moonspam/NanumSquareNeo@1.0.0/NanumSquareNeoTTF-dEb.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'NanumSquare Neo';
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+  src: url('https://fastly.jsdelivr.net/gh/moonspam/NanumSquareNeo@1.0.0/NanumSquareNeoTTF-eHv.woff2') format('woff2');
+}

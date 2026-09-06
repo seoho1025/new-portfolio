@@ -1,0 +1,172 @@
+/**
+1) PRIMITIVE - 색상표를 정리해둔 것// 컴포넌트에서 직접 사용하지 않음 그저 정리용 
+2) SEMANTIC  - 해당 값이 어디에 사용되는 값인지 
+3) TYPOGRAPHY / SPACING / RADIUS / LAYOUT / EFFECT — 그 외 스케일
+
+네이밍 
+- 회색 : 숫자가 클수록 어두운 색상 
+- 반투명 값(rgba)은 semantic에서 바로 적ㅇ의 한다 
+*/
+
+:root {
+  /**
+    1) PRIMATIVE
+    */
+
+  /* main color*/
+  --bule-500: #2d6af7; /*메인 블루*/
+  --bule-600: #313df6; /*서브 블루1*/
+  --bule-700: #005bac; /*서브 블루2*/
+
+  /* Gary 색상 정리 */
+  --gray-950: #1c1c2e; /*제일 진한 그레이 색상*/
+  --gray-900: #14181d;
+  --gray-800: #35393d; /*본문 텍스트 색상*/
+  --gray-700: #53575c;
+  --gray-600: #666b6f; /*흐린 텍스트 색상*/
+  --gray-500: #8e9397;
+  --gray-400: #aeb3b9; /*진한 테두리*/
+  --gray-300: #d2d7dd; /*기본 테두리 색상*/
+  --gray-200: #e3e7ed; /*옅은 배경*/
+  --white: #ffffff; /*흰색 기본 배경색*/
+
+  /*macOS 윈도우 신호등 색상*/
+  --traffic-red: #ff5f57;
+  --traffic-yellow: #febc2e;
+  --traffic-green: #28c840;
+
+  /*2) SEMANTIC = 컴포넌트는 여기부터만 사용*/
+  /* Text
+   * strong = globals(h1~h6) / Hero / Overview / Career / Projects / Section / Gnb
+   *          + (교체대상) About / Skills / ProjectModal
+   * base   = globals(body) / Career / Gnb
+   * muted  = Overview / Career / Projects + (교체대상) About / Skills / ProjectModal
+   * subtle = About / Overview / Career */
+  --color-text-strong: var(--gray-950);
+  --color-text: var(--gray-800);
+  --color-text-muted: rgba(
+    28,
+    30,
+    50,
+    0.58
+  ); /* 네이비 섞인 반투명 회색. 유리 패널 위에 얹혀서 반투명 필수 */
+  --color-text-subtle: rgba(28, 30, 50, 0.3); /* 비활성·플레이스홀더 */
+  --color-text-on-inverse: var(
+    --white
+  ); /* 어두운 뱃지/버튼 위 글자 = Career / ProjectModal */
+
+  /* Brand / Action
+   * primary        = Gnb / Overview / ProjectModal 
+   * primary-strong = hover·pressed 용
+   * primary-tint   = ProjectModal 배경 강조 */
+  --color-primary: var(--blue-500);
+  --color-primary-strong: var(--blue-700);
+  --color-primary-tint: rgba(45, 106, 247, 0.08);
+
+  /* Surface / Background
+   * bg        = globals(body) / Overview / Gnb
+   * bg-subtle = About / Career / Projects
+   * inverse   = Career(뱃지) / ProjectModal(버튼) */
+  --color-bg: var(--white);
+  --color-bg-subtle: var(--gray-200);
+  --color-surface-inverse: var(--gray-950);
+
+  /* Glass = 반투명 흰 패널
+   * glass        = About / Skills / ProjectModal
+   * glass-strong = About / ProjectModal */
+  --color-glass: rgba(255, 255, 255, 0.5);
+  --color-glass-strong: rgba(252, 252, 254, 0.92);
+
+  /* Border
+   * border          = Overview / Career
+   * hairline        = About / Career / Skills / ProjectModal
+   * hairline-strong = About / ProjectModal */
+  --color-border: var(--gray-300);
+  --color-border-hairline: rgba(0, 0, 0, 0.08);
+  --color-border-hairline-strong: rgba(0, 0, 0, 0.12);
+
+  /* Scrim = 모달 뒷 배경 어둡게 = ProjectModal(.backdrop) */
+  --color-scrim: rgba(20, 24, 29, 0.42);
+
+  /* Card gradient = 파스텔, 통짜로 사용
+   * a = Skills(.card)
+   * b = Projects(.card) / ProjectModal(.hero)
+   * c = Projects(.card 변형) */
+  --gradient-card-a: linear-gradient(145deg,#eef1ff,#f2efff 50%,#ffeff4);
+  --gradient-card-b: linear-gradient(145deg, #ecf0ff, #f0edff 55%, #fff1eb);
+  --gradient-card-c: linear-gradient(145deg, #f1edff, #f7edfa 55%, #ffeef2);
+
+  /* ==========================================================
+   * 3) TYPOGRAPHY
+   * ======================================================== */
+  --font-sans:
+    "NanumSquare Neo", -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo",
+    "Malgun Gothic", "Segoe UI", Roboto, sans-serif;
+
+  /* weight */
+  --font-weight-regular: 400; /* globals(body) */
+  --font-weight-bold: 700; /* globals(h1~h6) / About / Overview / Gnb */
+  --font-weight-extrabold: 800; /* Section / Career / Projects / Gnb / ProjectModal */
+  --font-weight-heavy: 900; /* Hero / Overview 큰 숫자·타이틀 */
+
+  /* size */
+  --font-size-xs: 0.75rem; /* 12px = (예약) */
+  --font-size-sm: 0.875rem; /* 14px = About / Overview / Career / Gnb */
+  --font-size-base: 1rem; /* 16px = globals / Overview / Career  */
+  --font-size-lg: 1.125rem; /* 18px = Career / Projects / Gnb */
+  --font-size-xl: 1.25rem; /* 20px = ProjectModal */
+  --font-size-2xl: 1.5rem; /* 24px = Overview / Career */
+  --font-size-3xl: 2rem; /* 32px = Section(.title) / Overview */
+  --font-size-4xl: 2.5rem; /* 40px = Overview */
+  --font-size-5xl: 3.5rem;
+  --line-height-snug: 1.4; /* 소제목    = (예약) */
+  --line-height-normal: 1.5; /* 본문      = globals / About */
+  --line-height-relaxed: 1.7; /* 긴 문단   = (예약) */
+
+  /* ==========================================================
+   * 4) SPACING = 4px 베이스, 숫자 = 4 * n px
+   * ======================================================== */
+  --space-1: 0.25rem; /*   4px = (예약) */
+  --space-2: 0.5rem; /*   8px = Overview */
+  --space-3: 0.75rem; /*  12px = Overview / Gnb */
+  --space-4: 1rem; /*  16px = Overview */
+  --space-5: 1.25rem; /*  20px = About / Overview */
+  --space-6: 1.5rem; /*  24px = About / Overview */
+  --space-8: 2rem; /*  32px = Section / Gnb */
+  --space-10: 2.5rem; /*  40px = About / Overview */
+  --space-12: 3rem; /*  48px = Overview */
+  --space-16: 4rem; /*  64px = Overview */
+  --space-24: 6rem; /*  96px = Section 섹션 세로 간격 / Overview */
+  --space-32: 8rem; /* 128px = (예약) */
+
+  /* ==========================================================
+   * 5) RADIUS
+   * ======================================================== */
+  --radius-sm: 4px; /* (예약) */
+  --radius-md: 8px; /* Projects / ProjectModal */
+  --radius-lg: 16px; /* About / Overview */
+  --radius-full: 9999px; /* (예약) 알약형 */
+
+  /* ==========================================================
+   * 6) LAYOUT
+   * ======================================================== */
+  --layout-max-width: 1200px; /* Hero / Section / Gnb */
+  --layout-gutter: clamp(
+    1.25rem,
+    5vw,
+    4rem
+  ); /* 좌우 여백 20~64px = Hero / Section / Gnb / Overview / About / Skills */
+
+  /* ==========================================================
+   * 7) EFFECT = Shadow
+   * 지금 각 컴포넌트가 rgba(20,24,29,..) / rgba(20,30,60,..) 로 직접 그림. 아래로 통일
+   *   sm = Gnb 고정 헤더
+   *   md = About 줄무늬 배경 카드
+   *   lg = About 유리 패널 / Overview 카드 스택 / Projects hover
+   *   xl = ProjectModal 떠 있는 패널
+   * ======================================================== */
+  --shadow-sm: 0 2px 16px rgba(20, 24, 29, 0.08);
+  --shadow-md: 0 4px 16px rgba(20, 24, 29, 0.06);
+  --shadow-lg: 0 20px 48px rgba(20, 30, 60, 0.14);
+  --shadow-xl: 0 40px 100px rgba(20, 30, 60, 0.28);
+}
